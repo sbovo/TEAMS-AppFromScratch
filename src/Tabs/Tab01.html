@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab01</title>
+    <!-- Microsoft Teams JavaScript API (via CDN) -->
+    <script src="https://unpkg.com/@microsoft/teams-js@1.3.7/dist/MicrosoftTeams.min.js"
+        integrity="sha384-glExfvkpce98dO2oN+diZ/Luv/5qrZJiOvWCeR8ng/ZxlhpvBgHKeVFRURrh+NEC"
+        crossorigin="anonymous"></script>
+    <script>
+        function useTeams() {
+            // Call the initialize API first
+            microsoftTeams.initialize();
+            // Get the TEAMS context
+            microsoftTeams.getContext((context) => {
+                document.getElementById("someText").innerHTML = "Hello " + context.loginHint;});
+        }
+    </script>   
+</head>
+<body onload="useTeams();">
+    <p id="someText"></p>
+</body>
+</html>
